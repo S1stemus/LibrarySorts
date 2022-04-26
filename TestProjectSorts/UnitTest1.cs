@@ -2,16 +2,14 @@ using NUnit.Framework;
 using LibrarySorts; 
 namespace TestProjectSorts
 {
-    public class Tests
+    public class SortTests
     {
         [SetUp]
         public void Setup()
         {
-        }
-
-        bool sort = true;
+        }        
         [Test]
-        public void Test1()
+        public void BubbleTest()
         {
             int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
             int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
@@ -21,7 +19,7 @@ namespace TestProjectSorts
             Assert.AreEqual(Sorts.BubbleSort(M, !sort), M2);
         }
         [Test]
-        public void Test2()
+        public void InsertTest()
         {
             int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
             int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
@@ -31,7 +29,7 @@ namespace TestProjectSorts
             Assert.AreEqual(Sorts.InsertionSort(M, !sort), M2);
         }
         [Test]
-        public void Test3()
+        public void QuickTest()
         {
             int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
             int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
@@ -41,7 +39,7 @@ namespace TestProjectSorts
             Assert.AreEqual(Sorts.quicksort(M, !sort), M2);
         }
         [Test]
-        public void Test4()
+        public void MergeTest()
         {
             int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
             int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
@@ -52,5 +50,19 @@ namespace TestProjectSorts
         }
        
         
+    }
+    public class StringTests
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+        [Test]
+        public void StrFromIntTest()
+        {
+            string[] words = { "asd", "sd", "sda" };
+            Assert.AreEqual(Sorts.StrFromInt(words[1],);
+        }
+
     }
 }
