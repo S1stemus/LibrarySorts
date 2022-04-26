@@ -226,6 +226,41 @@ namespace LibrarySorts
             }
 
         }
+        public static int StrFromInt(string word)
+        {
+            int sum = 0;
+            foreach (char c in word)
+            {
+                sum += (int)((int)c * Math.Pow(2,word.Length-1-word.IndexOf(c)));
+            }
+            return sum;
+        }
+        public static int[] arrayer(string[] words)
+        {
+            int[] numwords=new int[words.Length];
+            for(int i=0;i<numwords.Length; i++)
+            {
+                numwords[i]=StrFromInt(words[i]);
+            }
+            return numwords ;
+        }
+        public static string[] wordsort(int[] nums, string[] words)
+        {
+            int id = 0;
+            for (int i=0;i<nums.Length;i++)
+            {
+                for(int j=0; j<words.Length;j++)
+                {
+                    if (StrFromInt(words[j]) == nums[i])
+                    {
+                        words[id]=words[j];
+                        id++;
+                        break;
+                    }
+                }
+            }
+            return words ;
+        }
         
 
 
