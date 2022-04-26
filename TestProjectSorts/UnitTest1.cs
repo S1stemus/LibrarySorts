@@ -61,7 +61,7 @@ namespace TestProjectSorts
         public void StrFromIntTest()
         {
             string[] words = { "asd", "sd", "sda" };
-            Assert.AreEqual(Sorts.StrFromInt(words[1],);
+            Assert.AreEqual(Sorts.StrFromInt(words[1]),);
         }
 
     }
