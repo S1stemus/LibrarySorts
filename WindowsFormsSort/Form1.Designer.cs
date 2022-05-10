@@ -31,12 +31,13 @@
             this.Texts = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Merge = new System.Windows.Forms.Button();
+            this.quick = new System.Windows.Forms.Button();
+            this.insert = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // Texts
@@ -70,36 +71,37 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Bubble Sort";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Merge
             // 
-            this.button2.BackColor = System.Drawing.Color.RosyBrown;
-            this.button2.Location = new System.Drawing.Point(195, 445);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 60);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Merge Sort";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Merge.BackColor = System.Drawing.Color.RosyBrown;
+            this.Merge.Location = new System.Drawing.Point(195, 445);
+            this.Merge.Name = "Merge";
+            this.Merge.Size = new System.Drawing.Size(122, 60);
+            this.Merge.TabIndex = 3;
+            this.Merge.Text = "Merge Sort";
+            this.Merge.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // quick
             // 
-            this.button3.BackColor = System.Drawing.Color.RosyBrown;
-            this.button3.Location = new System.Drawing.Point(195, 521);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 60);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Quick Sort";
-            this.button3.UseVisualStyleBackColor = false;
+            this.quick.BackColor = System.Drawing.Color.RosyBrown;
+            this.quick.Location = new System.Drawing.Point(195, 521);
+            this.quick.Name = "quick";
+            this.quick.Size = new System.Drawing.Size(122, 60);
+            this.quick.TabIndex = 4;
+            this.quick.Text = "Quick Sort";
+            this.quick.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // insert
             // 
-            this.button4.BackColor = System.Drawing.Color.RosyBrown;
-            this.button4.Location = new System.Drawing.Point(39, 521);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 60);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Insertion Sort";
-            this.button4.UseVisualStyleBackColor = false;
+            this.insert.BackColor = System.Drawing.Color.RosyBrown;
+            this.insert.Location = new System.Drawing.Point(39, 521);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(122, 60);
+            this.insert.TabIndex = 5;
+            this.insert.Text = "Insertion Sort";
+            this.insert.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -129,18 +131,31 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Время сортировки\r\n";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.Location = new System.Drawing.Point(738, 110);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(167, 32);
+            this.radioButton1.TabIndex = 9;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "По возрастанию";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(1483, 647);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Timer);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.insert);
+            this.Controls.Add(this.quick);
+            this.Controls.Add(this.Merge);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Texts);
@@ -156,12 +171,13 @@
         private System.Windows.Forms.TextBox Texts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Merge;
+        private System.Windows.Forms.Button quick;
+        private System.Windows.Forms.Button insert;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Timer;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

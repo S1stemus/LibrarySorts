@@ -1,5 +1,6 @@
 using NUnit.Framework;
-using LibrarySorts; 
+using LibrarySorts;
+using System;
 namespace TestProjectSorts
 {
     public class SortTests
@@ -11,42 +12,35 @@ namespace TestProjectSorts
         [Test]
         public void BubbleTest()
         {
-            int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
-            int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
-            int[] M2 = { 99, 67, 24, 9, 8, 3, 0, -1, -100 };
-            bool sort = true;
-            Assert.AreEqual(Sorts.BubbleSort(M, sort), M1);
-            Assert.AreEqual(Sorts.BubbleSort(M, !sort), M2);
+            long[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
+            long[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
+            Sorts.BubbleSort(M);                       
+            Assert.AreEqual(M, M1);
         }
         [Test]
         public void InsertTest()
         {
-            int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
-            int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
-            int[] M2 = { 99, 67, 24, 9, 8, 3, 0, -1, -100 };
-            bool sort = true;
-            Assert.AreEqual(Sorts.InsertionSort(M, sort), M1);
-            Assert.AreEqual(Sorts.InsertionSort(M, !sort), M2);
+            long[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
+            long[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
+            Sorts.InsertionSort(M);            
+            Assert.AreEqual(M, M1);            
         }
         [Test]
         public void QuickTest()
         {
-            int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
-            int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
-            int[] M2 = { 99, 67, 24, 9, 8, 3, 0, -1, -100 };
-            bool sort = true;
-            Assert.AreEqual(Sorts.quicksort(M, sort), M1);
-            Assert.AreEqual(Sorts.quicksort(M, !sort), M2);
+            long[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
+            long[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
+            Sorts.Quicksort(M);
+            Assert.AreEqual(M,  M1);
+            
         }
         [Test]
         public void MergeTest()
         {
-            int[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
-            int[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 };
-            int[] M2 = { 99, 67, 24, 9, 8, 3, 0, -1, -100 };
-            bool sort = true;
-            Assert.AreEqual(Sorts.MergeSort(M, sort), M1);
-            Assert.AreEqual(Sorts.MergeSort(M, !sort), M2);
+            long[] M = { 3, 8, 9, 0, -1, -100, 99, 67, 24 };
+            long[] M1 = { -100, -1, 0, 3, 8, 9, 24, 67, 99 }; 
+            Sorts.MergeSort(M);
+            Assert.AreEqual(M, M1);            
         }
        
         
@@ -56,13 +50,21 @@ namespace TestProjectSorts
         [SetUp]
         public void Setup()
         {
+           
         }
         [Test]
         public void StrFromIntTest()
         {
-            string[] words = { "asd", "sd", "sda" };
-            Assert.AreEqual(Sorts.StrFromInt(words[1]),);
+
+            string word = "ломанная линия рисуется на бумаге";            
+            string[]words= word.Split(' ');
+            long[] nums = Sorts.arrayer(words);
+            Sorts.BubbleSort(nums);
+            string[]res =Sorts.Wordsort(words,nums);
+            string re = String.Join(',', res);
+            Assert.AreEqual(re, "бумаге,линия,ломанная,на,рисуется");
         }
+
 
     }
 }
